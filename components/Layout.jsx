@@ -7,8 +7,10 @@ export default function Layout({ children }) {
       <Head>
         <title>Monitoring LOGCOVID-19</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta name="description" content="COVID-19 info update with data visualization"></meta>
+        <meta name="keywords" content="covid19, corona virus, website, china, covid19 world, covid-19, corona, save earth, data corona, data covid19, ncov19, corona virus spread, virus, logistics, logistic, logistics covid19, logistics covid-19, logistic covid19, logistic covid-19"></meta>
+        <meta name="author" content="Muhammad Haidar Rifki"></meta>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Head>
       <header>
         <Navbar />
