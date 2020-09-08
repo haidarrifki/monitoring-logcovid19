@@ -4,17 +4,21 @@ import Layout from '../components/Layout'
 import Card from '../components/Card'
 import dateFormat from '../helpers/dateFormat'
 import numberFormat from '../helpers/numberFormat'
-import axios from 'axios'
 
 export async function getServerSideProps() {
-  // const res = await fetch(`${process.env.API_URL}/statistics/dashboard`, {credentials: 'include'})
-  const { data, status } = await axios.get(`${process.env.API_URL}/statistics/dashboard`)
-  // const data = response.data
+  const res = await fetch(`${process.env.API_URL}/statistics/dashboard`, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      mode: 'cors',
+      cache: 'default'
+    },
+  })
 
-  // const data = await res.json()
+  const data = await res.json()
 
-  if (status !== 200) {
-    console.error(json)
+  if (res.status !== 200) {
+    console.error(res)
     throw new Error('Failed to fetch API')
   }
 
