@@ -6,15 +6,7 @@ import dateFormat from '../helpers/dateFormat'
 import numberFormat from '../helpers/numberFormat'
 
 export async function getServerSideProps() {
-  const res = await fetch(`${process.env.API_URL}/statistics/dashboard`, {
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      mode: 'cors',
-      cache: 'default'
-    },
-  })
-
+  const res = await fetch(`${process.env.API_URL}/statistics/dashboard`)
   const data = await res.json()
 
   if (res.status !== 200) {
