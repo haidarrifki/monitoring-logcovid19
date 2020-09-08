@@ -5,7 +5,7 @@ import Card from '../components/Card'
 import dateFormat from '../helpers/dateFormat'
 import numberFormat from '../helpers/numberFormat'
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`${process.env.API_URL}/statistics/dashboard`)
 
   const data = await res.json()
@@ -18,8 +18,7 @@ export async function getStaticProps() {
   return {
     props: {
       data
-    },
-    revalidate: 1
+    }
   }
 }
 
